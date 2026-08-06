@@ -54,7 +54,7 @@ A differentiable, physically-based renderer built in PyTorch. Nabla (∇) comput
 | :---: | :---: | :---: |
 | <img src="assets/box_cubes/box_cubes_base.png" width="100%"> | <img src="assets/box_cubes/box_cubes_pert_x_shift_h_0.01.png" width="100%"> | <img src="assets/box_cubes/box_cubes_fd_grad_x_shift_h_0.01.png" width="100%"> |
 
-### Box Cubes: Albedo Gradients
+### Box Cubes: Floor Roughness Gradients
 
 | Base Render | Perturbed Render | Gradient Heatmap |
 | :---: | :---: | :---: |
