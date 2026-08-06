@@ -1,0 +1,72 @@
+<scene version="0.5.0">
+    <integrator type="path"/>
+
+    <sampler type="independent">
+        <integer name="sampleCount" value="128"/>
+    </sampler>
+
+    <camera type="perspective">
+        <float name="fov" value="45"/>
+        <integer name="width" value="512"/>
+        <integer name="height" value="512"/>
+        <transform name="toWorld">
+            <lookat origin="0, 0, 3.8" target="0, 0, 0" up="0, 1, 0"/>
+        </transform>
+    </camera>
+
+    <!-- Floor -->
+    <mesh type="ply">
+        <string name="filename" value="floor.ply"/>
+        <bsdf type="diffuse">
+            <color name="albedo" value="0.725 0.71 0.68"/>
+        </bsdf>
+    </mesh>
+
+    <!-- Ceiling -->
+    <mesh type="ply">
+        <string name="filename" value="ceiling.ply"/>
+        <bsdf type="diffuse">
+            <color name="albedo" value="0.725 0.71 0.68"/>
+        </bsdf>
+    </mesh>
+
+    <!-- Back Wall -->
+    <mesh type="ply">
+        <string name="filename" value="back.ply"/>
+        <bsdf type="diffuse">
+            <color name="albedo" value="0.725 0.71 0.68"/>
+        </bsdf>
+    </mesh>
+
+    <!-- Left Wall (Red) -->
+    <mesh type="ply">
+        <string name="filename" value="left.ply"/>
+        <bsdf type="diffuse">
+            <color name="albedo" value="0.63 0.065 0.05"/>
+        </bsdf>
+    </mesh>
+
+    <!-- Right Wall (Green) -->
+    <mesh type="ply">
+        <string name="filename" value="right.ply"/>
+        <bsdf type="diffuse">
+            <color name="albedo" value="0.14 0.45 0.091"/>
+        </bsdf>
+    </mesh>
+
+    <!-- Ceiling Light Source -->
+    <mesh type="ply">
+        <string name="filename" value="light.ply"/>
+        <emitter type="area">
+            <color name="radiance" value="15.0 15.0 15.0"/>
+        </emitter>
+    </mesh>
+
+    <!-- Stanford Bunny -->
+    <mesh type="ply">
+        <string name="filename" value="bunny_transformed.ply"/>
+        <bsdf type="diffuse">
+            <color name="albedo" value="0.38 0.32 0.52"/>
+        </bsdf>
+    </mesh>
+</scene>

@@ -1,0 +1,65 @@
+<scene version="0.5.0">
+    <integrator type="path"/>
+    <sampler type="independent">
+        <integer name="sampleCount" value="128"/>
+    </sampler>
+
+    <camera type="perspective">
+        <float name="fov" value="39.3077"/>
+        <integer name="width" value="512"/>
+        <integer name="height" value="512"/>
+        <transform name="toWorld">
+            <lookat origin="0, 0, 3.9" target="0, 0, 0" up="0, 1, 0"/>
+        </transform>
+    </camera>
+
+    <!-- Floor -->
+    <mesh id="floor" type="ply">
+        <string name="filename" value="floor.ply"/>
+        <bsdf type="diffuse"><color name="albedo" value="0.885809 0.698859 0.666422"/></bsdf>
+    </mesh>
+
+    <!-- Ceiling -->
+    <mesh id="ceiling" type="ply">
+        <string name="filename" value="ceiling.ply"/>
+        <bsdf type="diffuse"><color name="albedo" value="0.885809 0.698859 0.666422"/></bsdf>
+    </mesh>
+
+    <!-- Back Wall -->
+    <mesh id="back" type="ply">
+        <string name="filename" value="back.ply"/>
+        <bsdf type="diffuse"><color name="albedo" value="0.885809 0.698859 0.666422"/></bsdf>
+    </mesh>
+
+    <!-- Green Wall (x=+1) -->
+    <mesh id="green_wall" type="ply">
+        <string name="filename" value="green_wall.ply"/>
+        <bsdf type="diffuse"><color name="albedo" value="0.105421 0.37798 0.076425"/></bsdf>
+    </mesh>
+
+    <!-- Red Wall (x=-1) -->
+    <mesh id="red_wall" type="ply">
+        <string name="filename" value="red_wall.ply"/>
+        <bsdf type="diffuse"><color name="albedo" value="0.570068 0.0430135 0.0443706"/></bsdf>
+    </mesh>
+
+    <!-- Ceiling Area Light -->
+    <mesh id="light" type="ply">
+        <string name="filename" value="light.ply"/>
+        <bsdf type="diffuse"><color name="albedo" value="0.885809 0.698859 0.666422"/></bsdf>
+        <emitter type="area">
+            <color name="radiance" value="18.387 13.9873 6.75357"/>
+        </emitter>
+    </mesh>
+
+    <!-- Stanford Bunny (Oriented to face front towards camera) -->
+    <mesh id="bunny" type="ply">
+        <string name="filename" value="bunny.ply"/>
+        <transform name="toWorld">
+            <scale value="8.5, 8.5, 8.5"/>
+            <rotate y="1" angle="0"/>
+            <translate value="0.1, -1.2, 0.0"/>
+        </transform>
+        <bsdf type="diffuse"><color name="albedo" value="0.38 0.32 0.52"/></bsdf>
+    </mesh>
+</scene>

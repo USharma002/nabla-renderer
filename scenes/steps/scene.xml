@@ -1,0 +1,35 @@
+<scene>
+    <camera>
+        <transform name="lookat" origin="0, 0, 1.0" target="0, 0, 0" up="0, 1, 0"/>
+        <float name="fov" value="60"/>
+    </camera>
+    
+    <!-- Flat Overhead Light -->
+    <shape type="obj">
+        <string name="filename" value="light.obj"/>
+        <emitter type="area">
+            <rgb name="radiance" value="0.2, 0.2, 0.2"/>
+        </emitter>
+    </shape>
+
+    <!-- Angled Light for Highlights/Shadows -->
+    <shape type="obj">
+        <string name="filename" value="../planets/sphere.obj"/>
+        <transform>
+            <scale value="0.2"/>
+            <translate value="2.0, 2.0, 2.5"/>
+        </transform>
+        <emitter type="area">
+            <rgb name="radiance" value="1.5, 1.5, 1.5"/>
+        </emitter>
+    </shape>
+    
+    <!-- Floor with Texture and Initial Flat Normal Map -->
+    <shape type="obj">
+        <string name="filename" value="floor.obj"/>
+        <bsdf type="diffuse">
+
+            <string name="normal" value="init_norm.png"/>
+        </bsdf>
+    </shape>
+</scene>

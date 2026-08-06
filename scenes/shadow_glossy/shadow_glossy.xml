@@ -1,0 +1,29 @@
+<scene version="0.5.0">
+    <integrator type="path"/>
+    <sampler type="independent"><integer name="sampleCount" value="64"/></sampler>
+    <camera type="perspective">
+        <float name="fov" value="45.0"/>
+        <integer name="width" value="512"/>
+        <integer name="height" value="512"/>
+        <transform name="toWorld">
+            <lookat origin="0.0, 3.2, 2.5" target="0.0, 0.0, 0.0" up="0.0, 1.0, 0.0"/>
+        </transform>
+    </camera>
+    <!-- Highly Glossy Receiver Floor -->
+    <mesh type="ply">
+        <string name="filename" value="floor.ply"/>
+        <bsdf type="metallic">
+            <color name="albedo" value="0.85 0.85 0.85"/>
+            <float name="roughness" value="0.02"/>
+        </bsdf>
+    </mesh>
+    <mesh type="ply">
+        <string name="filename" value="blocker.ply"/>
+        <bsdf type="diffuse"><color name="albedo" value="0.2 0.2 0.2"/></bsdf>
+    </mesh>
+    <mesh type="ply">
+        <string name="filename" value="light.ply"/>
+        <bsdf type="diffuse"><color name="albedo" value="0.8 0.8 0.8"/></bsdf>
+        <emitter type="area"><color name="radiance" value="8.0 8.0 8.0"/></emitter>
+    </mesh>
+</scene>
